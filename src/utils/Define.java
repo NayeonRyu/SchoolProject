@@ -1,2 +1,10 @@
-package utils;public class Define {
+package utils;
+
+public class Define {
+    public static final int KOREA = 1001; //국어
+    public static final int MATH = 2001; //수학
+
+    public static final int AB_TYPE = 0; //일반과목 학점 산출 정책
+    public static final int SAB_TYPE = 1; //필수과목 학점 산출 정책
+
 }
