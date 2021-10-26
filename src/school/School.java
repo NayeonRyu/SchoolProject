@@ -19,19 +19,26 @@ public class School {
         return instance;
     }
 
-    public ArrayList<Student> getStudentList(){
+    public ArrayList<Student> getStudentList() {
         return studentList;
     }
-    public void addStudent(Student student){
+
+    public void setStudentList(ArrayList<Student> studentList) {
+        this.studentList = studentList;
+    }
+
+    public void addStudent(Student student) {
         studentList.add(student);
     }
 
-    public void addSubject(Subject subject){
+    public void addSubject(Subject subject) {
         subjectList.add(subject);
     }
-    public ArrayList<Subject> getSubjectList(){
+
+    public ArrayList<Subject> getSubjectList() {
         return subjectList;
     }
+
     public void setSubjectList(ArrayList<Subject> subject) {
         this.subjectList = subjectList;
     }
