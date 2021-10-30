@@ -1,6 +1,7 @@
 package school;
 
 import utils.Define;
+
 import java.util.ArrayList;
 
 public class Subject {
@@ -14,6 +15,7 @@ public class Subject {
         this.subjectId = subjectId;
         this.gradeType = Define.AB_TYPE;
     }
+
     //교양과목 constructor
     public Subject(String subjectName, int subjectId, int gradeType) {
         this.subjectName = subjectName;
@@ -53,7 +55,7 @@ public class Subject {
         this.gradeType = gradeType;
     }
 
-    public void register(Student student){
+    public void register(Student student) {
         studentList.add(student);
     }
 }

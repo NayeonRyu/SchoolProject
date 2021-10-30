@@ -24,17 +24,17 @@ public class TestMain {
         System.out.println(report);
     }
 
-    public void createSubject(){
-        korean = new Subject("국어",Define.KOREA);
-        math = new Subject("수학",Define.MATH);
-        dance = new Subject("방송댄스",Define.DANCE,Define.PF_TYPE);
+    public void createSubject() {
+        korean = new Subject("국어", Define.KOREA);
+        math = new Subject("수학", Define.MATH);
+        dance = new Subject("방송댄스", Define.DANCE, Define.PF_TYPE);
 
         goodSchool.addSubject(korean);
         goodSchool.addSubject(math);
         goodSchool.addSubject(dance);
     }
 
-    public void createStudent(){
+    public void createStudent() {
         Student student1 = new Student(181213, "안성원", korean);
         Student student2 = new Student(182330, "오태훈", math);
         Student student3 = new Student(171518, "이동호", korean);

@@ -68,11 +68,10 @@ public class GenerateGradeReport {
             if (score.getSubject().getSubjectId() == subjectId) { //학점산출과목
                 String grade;
                 //System.out.println(score);
-                if(score.getSubject().getGradeType() == Define.PF_TYPE) {
+                if (score.getSubject().getGradeType() == Define.PF_TYPE) {
                     System.out.println("1");
                     grade = gradeEvaluations[Define.PF_TYPE].getGrade(score.getPoint());
                 } else {
-                    //System.out.println("2");
                     if (score.getSubject().getSubjectId() == majorId) {
                         grade = gradeEvaluations[Define.SAB_TYPE].getGrade(score.getPoint());
                     } else {
