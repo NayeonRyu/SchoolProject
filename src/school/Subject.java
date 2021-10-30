@@ -14,6 +14,12 @@ public class Subject {
         this.subjectId = subjectId;
         this.gradeType = Define.AB_TYPE;
     }
+    //교양과목 constructor
+    public Subject(String subjectName, int subjectId, int gradeType) {
+        this.subjectName = subjectName;
+        this.subjectId = subjectId;
+        this.gradeType = gradeType;
+    }
 
     public String getSubjectName() {
         return subjectName;

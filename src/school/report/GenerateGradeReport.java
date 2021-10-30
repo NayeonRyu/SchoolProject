@@ -1,5 +1,6 @@
 package school.report;
 
+import grade.PassFailEvaluation;
 import school.School;
 import school.Score;
 import school.Student;
@@ -57,21 +58,26 @@ public class GenerateGradeReport {
         }
     }
 
-
-    public void getScoreGrade(Student student, int subjectId){
+    public void getScoreGrade(Student student, int subjectId) {
         ArrayList<Score> scoreList = student.getScoreList();
         int majorId = student.getMajorSubject().getSubjectId();
+        GradeEvaluation[] gradeEvaluations = {new BasicEvaluation(), new MajorEvaluation(), new PassFailEvaluation()};
 
-        GradeEvaluation[] gradeEvaluations = {new BasicEvaluation(), new MajorEvaluation()};
-
-        for(int i = 0 ; i < scoreList.size(); i++){
+        for (int i = 0; i < scoreList.size(); i++) {
             Score score = scoreList.get(i);
-            if(score.getSubject().getSubjectId() == subjectId){
+            if (score.getSubject().getSubjectId() == subjectId) { //학점산출과목
                 String grade;
-                if(score.getSubject().getSubjectId() == majorId){
-                    grade = gradeEvaluations[Define.SAB_TYPE].getGrade(score.getPoint());
+                //System.out.println(score);
+                if(score.getSubject().getGradeType() == Define.PF_TYPE) {
+                    System.out.println("1");
+                    grade = gradeEvaluations[Define.PF_TYPE].getGrade(score.getPoint());
                 } else {
-                    grade = gradeEvaluations[Define.AB_TYPE].getGrade(score.getPoint());
+                    //System.out.println("2");
+                    if (score.getSubject().getSubjectId() == majorId) {
+                        grade = gradeEvaluations[Define.SAB_TYPE].getGrade(score.getPoint());
+                    } else {
+                        grade = gradeEvaluations[Define.AB_TYPE].getGrade(score.getPoint());
+                    }
                 }
                 buffer.append(score.getPoint());
                 buffer.append(": ");
@@ -80,6 +86,7 @@ public class GenerateGradeReport {
             }
         }
     }
+
     public void makeFooter() {
         buffer.append("\n");
     }
